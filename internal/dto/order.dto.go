@@ -1,6 +1,9 @@
 package dto
 
-import "example.com/m/v4/internal/enums"
+import (
+	"example.com/m/v4/internal/enums"
+	ordersModel "example.com/m/v4/internal/models/orders"
+)
 
 type CreateOrderDTO struct {
 	PaymentMethod   enums.PaymentMethod  `json:"paymentMethod" binding:"required,oneof=ONLINE COD"`
@@ -22,4 +25,9 @@ type ShippingAddressDTO struct {
 	State        string `json:"state" binding:"required"`
 	Country      string `json:"country" binding:"required"`
 	Pincode      string `json:"pincode" binding:"required"`
+}
+
+type CreateOrderResponse struct {
+	Order      *ordersModel.Order `json:"order"`
+	PaymentURL string             `json:"paymentUrl,omitempty"`
 }

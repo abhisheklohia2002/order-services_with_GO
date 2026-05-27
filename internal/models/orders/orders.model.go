@@ -58,3 +58,14 @@ type Order struct {
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 }
+
+type ProductSnapshot struct {
+	ID            uint   `json:"id"`
+	Name          string `json:"name"`
+	SKU           string `json:"sku"`
+	Price         int    `json:"price"`
+	DiscountPrice int    `json:"discountPrice"`
+	StockQuantity int    `json:"stockQuantity"`
+	Image         string `json:"image"`
+	Status        bool   `json:"status"`
+}

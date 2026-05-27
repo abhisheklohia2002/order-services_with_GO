@@ -14,7 +14,7 @@ func SetupRoutes(router *gin.Engine, OrderHandler *handlers.OrderHandlers) {
 	api := router.Group("/api")
 	orders := api.Group("/order")
 	{
-		orders.POST("/order", OrderHandler.CreateOrder)
+		orders.POST("/", OrderHandler.CreateOrder)
 	}
 
 }
